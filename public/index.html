@@ -1,0 +1,33 @@
+<!DOCTYPE html>
+<html lang="ru">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Pixel Game MVP</title>
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+    <div id="auth-block" class="card">
+        <h2>Вход в Pixel Game</h2>
+        <input type="text" id="username" placeholder="Имя пользователя">
+        <input type="password" id="password" placeholder="Пароль">
+        <div class="buttons">
+            <button onclick="auth('login')">Войти</button>
+            <button onclick="auth('register')" class="btn-alt">Регистрация</button>
+        </div>
+        <p id="auth-error" class="error"></p>
+    </div>
+
+    <div id="game-block" class="card hidden">
+        <div class="user-info">Привет, <span id="user-display"></span>!</div>
+        <canvas id="canvas" width="500" height="500"></canvas>
+        <div class="controls">
+            <label for="color-picker">Цвет:</label>
+            <input type="color" id="color-picker" value="#ff0000">
+        </div>
+    </div>
+
+    <script src="/socket.io/socket.io.js"></script>
+    <script src="app.js"></script>
+</body>
+</html>
